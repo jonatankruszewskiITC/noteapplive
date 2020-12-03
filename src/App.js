@@ -9,7 +9,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      notes: { "01": {}, "02": {} },
+      notes: {},
       shouldShowMOdal: false,
       noteToShow: null,
     };
