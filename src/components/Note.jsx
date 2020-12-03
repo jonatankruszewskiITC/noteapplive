@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 const Note = (props) => {
-  return <div className="App"></div>;
+  return <div>Note</div>;
 };
 
 export default Note;

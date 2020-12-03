@@ -1,6 +1,6 @@
-import React, { Component}from 'react'
+import React, { Component } from "react";
 
-class Form extends Component { 
+class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,13 +9,18 @@ class Form extends Component {
     };
   }
 
+  createNote() {}
+  handleChange(e) {}
+
   render() {
     return (
-      <div className="App">
-       
-      </div>
+      <form>
+        <input name="noteTitle"></input>
+        <textarea name="noteBody"></textarea>
+        <input type="submit" value="Create note"></input>
+      </form>
     );
   }
 }
 
-export default Form
+export default Form;

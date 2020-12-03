@@ -1,33 +1,26 @@
 import logo from "./logo.svg";
 import "./App.css";
-import React, { Component } from "React";
-
+import React, { Component } from "react";
+import Form from "./components/Form";
+import NoteList from "./components/NoteList";
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      notes: {},
+      notes: { "01": {}, "02": {} },
       shouldShowMOdal: false,
       noteToShow: null,
     };
   }
 
   render() {
+    const {
+      state: { notes },
+    } = this;
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer">
-            Learn React
-          </a>
-        </header>
+      <div>
+        <Form></Form>
+        <NoteList notes={notes}></NoteList>
       </div>
     );
   }
