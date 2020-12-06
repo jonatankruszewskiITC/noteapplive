@@ -25,6 +25,12 @@ class App extends Component {
 
   deleteNote() {}
   updateNote() {}
+  shouldRenderNotes() {
+    return (
+      Object.keys(this.state.notes).length > 0 &&
+      this.state.notes.constructor === Object
+    );
+  }
 
   render() {
     const {
@@ -37,7 +43,7 @@ class App extends Component {
           createNote={(body, title) => {
             createNote(body, title);
           }}></Form>
-        <NoteList notes={notes}></NoteList>
+        {this.shouldRenderNotes() && <NoteList notes={notes}></NoteList>}
       </div>
     );
   }

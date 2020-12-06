@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Note from "./Note";
 
 const NoteList = (props) => {
@@ -8,11 +8,11 @@ const NoteList = (props) => {
   // keyArray.map((key) => <Note note=notes[key] key={key}
 
   return (
-    <Note>
+    <>
       {Object.keys(notes).map((keyName) => {
         return <Note note={notes[keyName]} key={keyName}></Note>;
       })}
-    </Note>
+    </>
   );
 };
 
