@@ -1,5 +1,6 @@
 import React from "react";
 import Note from "./Note";
+import convertDate from "../helpers/convertDate";
 
 const NoteList = (props) => {
   const { notes } = props;
@@ -10,7 +11,12 @@ const NoteList = (props) => {
   return (
     <>
       {Object.keys(notes).map((keyName) => {
-        return <Note note={notes[keyName]} key={keyName}></Note>;
+        return (
+          <Note
+            note={notes[keyName]}
+            key={keyName}
+            formatedDate={convertDate(notes[keyName].date)}></Note>
+        );
       })}
     </>
   );

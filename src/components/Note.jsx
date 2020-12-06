@@ -1,14 +1,15 @@
 import React, { useEffect } from "react";
+import convertDate from "../helpers/convertDate";
 
 const Note = (props) => {
-  // const note = props.note ? props.note : null;
+  const { title, body } = props.note;
 
   return (
     <div>
       <div>
-        <p>{props.note.title}</p>
-        <p>{props.note.body}</p>
-        <p>{props.note.date}</p>
+        <p>{title}</p>
+        <p>{body}</p>
+        <p>{props.formatedDate}</p>
       </div>
     </div>
   );
