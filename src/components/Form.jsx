@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import TextField from "@material-ui/core/TextField";
+import Box from "@material-ui/core/Box";
 class Form extends Component {
   constructor(props) {
     super(props);
@@ -30,24 +36,52 @@ class Form extends Component {
       state: { noteTitle, noteBody },
     } = this;
     return (
-      <form
-        onSubmit={(e) => {
-          onNoteCreation(e);
-        }}>
-        <input
-          value={noteTitle}
-          onInput={(e) => {
-            handleChange(e);
-          }}
-          name="noteTitle"></input>
-        <textarea
-          value={noteBody}
-          onInput={(e) => {
-            handleChange(e);
-          }}
-          name="noteBody"></textarea>
-        <input type="submit" value="Create note"></input>
-      </form>
+      <Box p={2}>
+        <Card>
+          <CardContent>
+            <Typography color="textPrimary" variant="h3" gutterBottom>
+              Create your note!{" "}
+            </Typography>
+          </CardContent>
+          <CardContent>
+            <TextField
+              id="filled-basic"
+              label="Note Title"
+              value={noteTitle}
+              onInput={(e) => {
+                handleChange(e);
+              }}
+              fullWidth
+              name="noteTitle"
+              variant="filled"
+            />
+          </CardContent>
+          <CardContent>
+            <TextField
+              id="outlined-multiline-static"
+              label="My Note"
+              multiline
+              fullWidth
+              rows={4}
+              variant="outlined"
+              value={noteBody}
+              onInput={(e) => {
+                handleChange(e);
+              }}
+              name="noteBody"
+            />
+          </CardContent>
+
+          <CardActions>
+            <Button
+              onClick={(e) => {
+                onNoteCreation(e);
+              }}>
+              Create Note
+            </Button>
+          </CardActions>
+        </Card>
+      </Box>
     );
   }
 }

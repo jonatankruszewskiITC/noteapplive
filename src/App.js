@@ -1,10 +1,12 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React, { Component } from "react";
 import Form from "./components/Form";
 import NoteList from "./components/NoteList";
 import { v4 as uuidv4 } from "uuid";
 import createNote from "./helpers/createNote";
+import Header from "./components/Header";
+import { Grid } from "@material-ui/core";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -39,10 +41,19 @@ class App extends Component {
     } = this;
     return (
       <div>
-        <Form
-          createNote={(body, title) => {
-            createNote(body, title);
-          }}></Form>
+        <Grid>
+          <Header></Header>
+        </Grid>
+        <Grid container>
+          <Grid item xs={false} md={2}></Grid>
+          <Grid item xs={12} md={8}>
+            <Form
+              createNote={(body, title) => {
+                createNote(body, title);
+              }}></Form>
+          </Grid> 
+          <Grid item xs={false} md={2}></Grid>
+        </Grid>
         {this.shouldRenderNotes() && <NoteList notes={notes}></NoteList>}
       </div>
     );
