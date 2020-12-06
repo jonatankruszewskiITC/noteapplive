@@ -11,7 +11,7 @@ const NoteList = (props) => {
 
   return (
     <Box m={2}>
-      <Grid container spacing={6}>
+      <Grid container item spacing={6}>
         {Object.keys(notes).map((keyName) => {
           return (
             <Note

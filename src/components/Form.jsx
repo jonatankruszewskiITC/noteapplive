@@ -45,7 +45,6 @@ class Form extends Component {
           </CardContent>
           <CardContent>
             <TextField
-              id="filled-basic"
               label="Note Title"
               value={noteTitle}
               onInput={(e) => {
@@ -58,7 +57,6 @@ class Form extends Component {
           </CardContent>
           <CardContent>
             <TextField
-              id="outlined-multiline-static"
               label="My Note"
               multiline
               fullWidth

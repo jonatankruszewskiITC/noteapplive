@@ -51,7 +51,7 @@ class App extends Component {
               createNote={(body, title) => {
                 createNote(body, title);
               }}></Form>
-          </Grid> 
+          </Grid>
           <Grid item xs={false} md={2}></Grid>
         </Grid>
         {this.shouldRenderNotes() && <NoteList notes={notes}></NoteList>}
